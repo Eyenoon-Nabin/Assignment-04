@@ -19,6 +19,9 @@
             font-family: "Outfit", sans-serif;
         }
     </style>
+    <!-- font awsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <title>Job Application Tracker</title>
 </head>
 
@@ -29,11 +32,11 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
             <div class="bg-base-100 p-6 rounded-xl border border-gray-200 shadow-sm ">
                 <h3 class="text-gray-500 font-medium">Total</h3>
-                <p id="total-count" class="text-3xl font-bold text-blue-600 mt-2">8</p>
+                <p id="total-count" class="text-3xl font-bold text-blue-800 mt-2">8</p>
             </div>
             <div class="bg-base-100 p-6 rounded-xl border border-gray-200 shadow-sm">
                 <h3 class="text-gray-500 font-medium">Interview</h3>
-                <p id="interview-count" class="text-3xl font-bold text-green-500 mt-2">0</p>
+                <p id="interview-count" class="text-3xl font-bold text-green-800 mt-2">0</p>
             </div>
             <div class="bg-base-100 p-6 rounded-xl border border-gray-200 shadow-sm">
                 <h3 class="text-gray-500 font-medium">Rejected</h3>
@@ -43,7 +46,7 @@
         <div class="mb-6">
             <div class="flex justify-between items-center mb-4">
                 <h2 class="text-xl font-bold text-slate-800">Available Jobs</h2>
-                <p class="text-gray-500 text-sm">8 jobs</p>
+                <p id="available-jobs-count" class="text-gray-500 text-sm">8 jobs</p>
             </div>
 
             <div class="flex gap-2">
@@ -54,15 +57,20 @@
                     class="btn btn-sm btn-outline border-gray-300 text-gray-600 px-4">Rejected</button>
             </div>
         </div>
+        <div id="empty-state" class="hidden text-center py-16 bg-base-100 rounded-xl border border-gray-200 mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto text-blue-400 mb-4" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            <h3 class="text-xl font-bold text-slate-800">No jobs available</h3>
+            <p class="text-gray-500 mt-2">Check back soon for new job opportunities</p>
+        </div>
         <div id="jobs-container" class="space-y-4">
 
             <div class="job-card bg-base-100 p-6 rounded-xl border border-gray-200 shadow-sm relative">
-                <button class="absolute top-4 right-4 text-gray-400 hover:text-red-500">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                    </svg>
+                <button class="absolute top-4 right-4 text-gray-400 hover:text-red-800">
+                    <i class="fa-solid fa-trash"></i>
                 </button>
 
                 <h3 class="text-lg font-bold text-slate-800">Mobile First Corp</h3>
@@ -71,7 +79,7 @@
                 <p class="text-gray-400 text-xs mt-3">Remote • Full-time • $130,000 - $175,000</p>
 
                 <div class="mt-4">
-                    <span class="bg-blue-50 text-blue-600 text-xs font-semibold px-3 py-1 rounded-md">NOT APPLIED</span>
+                    <span class="bg-blue-50 text-blue-800 text-xs font-semibold px-3 py-1 rounded-md">NOT APPLIED</span>
                 </div>
 
                 <p class="text-sm text-gray-600 mt-4 line-clamp-2">
@@ -85,12 +93,8 @@
                 </div>
             </div>
             <div class="job-card bg-base-100 p-6 rounded-xl border border-gray-200 shadow-sm relative">
-                <button class="absolute top-4 right-4 text-gray-400 hover:text-red-500">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                    </svg>
+                <button class="absolute top-4 right-4 text-gray-400 hover:text-red-800">
+                    <i class="fa-solid fa-trash"></i>
                 </button>
 
                 <h3 class="text-lg font-bold text-slate-800">Mobile First Corp</h3>
@@ -99,7 +103,7 @@
                 <p class="text-gray-400 text-xs mt-3">Remote • Full-time • $130,000 - $175,000</p>
 
                 <div class="mt-4">
-                    <span class="bg-blue-50 text-blue-600 text-xs font-semibold px-3 py-1 rounded-md">NOT APPLIED</span>
+                    <span class="bg-blue-50 text-blue-800 text-xs font-semibold px-3 py-1 rounded-md">NOT APPLIED</span>
                 </div>
 
                 <p class="text-sm text-gray-600 mt-4 line-clamp-2">
@@ -113,12 +117,8 @@
                 </div>
             </div>
             <div class="job-card bg-base-100 p-6 rounded-xl border border-gray-200 shadow-sm relative">
-                <button class="absolute top-4 right-4 text-gray-400 hover:text-red-500">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                    </svg>
+                <button class="absolute top-4 right-4 text-gray-400 hover:text-red-800">
+                    <i class="fa-solid fa-trash"></i>
                 </button>
 
                 <h3 class="text-lg font-bold text-slate-800">Mobile First Corp</h3>
@@ -127,7 +127,7 @@
                 <p class="text-gray-400 text-xs mt-3">Remote • Full-time • $130,000 - $175,000</p>
 
                 <div class="mt-4">
-                    <span class="bg-blue-50 text-blue-600 text-xs font-semibold px-3 py-1 rounded-md">NOT APPLIED</span>
+                    <span class="bg-blue-50 text-blue-800 text-xs font-semibold px-3 py-1 rounded-md">NOT APPLIED</span>
                 </div>
 
                 <p class="text-sm text-gray-600 mt-4 line-clamp-2">
@@ -141,12 +141,8 @@
                 </div>
             </div>
             <div class="job-card bg-base-100 p-6 rounded-xl border border-gray-200 shadow-sm relative">
-                <button class="absolute top-4 right-4 text-gray-400 hover:text-red-500">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                    </svg>
+                <button class="absolute top-4 right-4 text-gray-400 hover:text-red-800">
+                    <i class="fa-solid fa-trash"></i>
                 </button>
 
                 <h3 class="text-lg font-bold text-slate-800">Mobile First Corp</h3>
@@ -155,7 +151,7 @@
                 <p class="text-gray-400 text-xs mt-3">Remote • Full-time • $130,000 - $175,000</p>
 
                 <div class="mt-4">
-                    <span class="bg-blue-50 text-blue-600 text-xs font-semibold px-3 py-1 rounded-md">NOT APPLIED</span>
+                    <span class="bg-blue-50 text-blue-800 text-xs font-semibold px-3 py-1 rounded-md">NOT APPLIED</span>
                 </div>
 
                 <p class="text-sm text-gray-600 mt-4 line-clamp-2">
@@ -169,12 +165,8 @@
                 </div>
             </div>
             <div class="job-card bg-base-100 p-6 rounded-xl border border-gray-200 shadow-sm relative">
-                <button class="absolute top-4 right-4 text-gray-400 hover:text-red-500">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                    </svg>
+                <button class="absolute top-4 right-4 text-gray-400 hover:text-red-800">
+                    <i class="fa-solid fa-trash"></i>
                 </button>
 
                 <h3 class="text-lg font-bold text-slate-800">Mobile First Corp</h3>
@@ -183,7 +175,7 @@
                 <p class="text-gray-400 text-xs mt-3">Remote • Full-time • $130,000 - $175,000</p>
 
                 <div class="mt-4">
-                    <span class="bg-blue-50 text-blue-600 text-xs font-semibold px-3 py-1 rounded-md">NOT APPLIED</span>
+                    <span class="bg-blue-50 text-blue-800 text-xs font-semibold px-3 py-1 rounded-md">NOT APPLIED</span>
                 </div>
 
                 <p class="text-sm text-gray-600 mt-4 line-clamp-2">
@@ -197,12 +189,8 @@
                 </div>
             </div>
             <div class="job-card bg-base-100 p-6 rounded-xl border border-gray-200 shadow-sm relative">
-                <button class="absolute top-4 right-4 text-gray-400 hover:text-red-500">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                    </svg>
+                <button class="absolute top-4 right-4 text-gray-400 hover:text-red-800">
+                    <i class="fa-solid fa-trash"></i>
                 </button>
 
                 <h3 class="text-lg font-bold text-slate-800">Mobile First Corp</h3>
@@ -211,7 +199,7 @@
                 <p class="text-gray-400 text-xs mt-3">Remote • Full-time • $130,000 - $175,000</p>
 
                 <div class="mt-4">
-                    <span class="bg-blue-50 text-blue-600 text-xs font-semibold px-3 py-1 rounded-md">NOT APPLIED</span>
+                    <span class="bg-blue-50 text-blue-800 text-xs font-semibold px-3 py-1 rounded-md">NOT APPLIED</span>
                 </div>
 
                 <p class="text-sm text-gray-600 mt-4 line-clamp-2">
@@ -225,12 +213,8 @@
                 </div>
             </div>
             <div class="job-card bg-base-100 p-6 rounded-xl border border-gray-200 shadow-sm relative">
-                <button class="absolute top-4 right-4 text-gray-400 hover:text-red-500">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                    </svg>
+                <button class="absolute top-4 right-4 text-gray-400 hover:text-red-800">
+                    <i class="fa-solid fa-trash"></i>
                 </button>
 
                 <h3 class="text-lg font-bold text-slate-800">Mobile First Corp</h3>
@@ -239,7 +223,7 @@
                 <p class="text-gray-400 text-xs mt-3">Remote • Full-time • $130,000 - $175,000</p>
 
                 <div class="mt-4">
-                    <span class="bg-blue-50 text-blue-600 text-xs font-semibold px-3 py-1 rounded-md">NOT APPLIED</span>
+                    <span class="bg-blue-50 text-blue-800 text-xs font-semibold px-3 py-1 rounded-md">NOT APPLIED</span>
                 </div>
 
                 <p class="text-sm text-gray-600 mt-4 line-clamp-2">
@@ -253,12 +237,8 @@
                 </div>
             </div>
             <div class="job-card bg-base-100 p-6 rounded-xl border border-gray-200 shadow-sm relative">
-                <button class="absolute top-4 right-4 text-gray-400 hover:text-red-500">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                    </svg>
+                <button class="absolute top-4 right-4 text-gray-400 hover:text-red-800">
+                    <i class="fa-solid fa-trash"></i>
                 </button>
 
                 <h3 class="text-lg font-bold text-slate-800">Mobile First Corp</h3>
@@ -267,7 +247,7 @@
                 <p class="text-gray-400 text-xs mt-3">Remote • Full-time • $130,000 - $175,000</p>
 
                 <div class="mt-4">
-                    <span class="bg-blue-50 text-blue-600 text-xs font-semibold px-3 py-1 rounded-md">NOT APPLIED</span>
+                    <span class="bg-blue-50 text-blue-800 text-xs font-semibold px-3 py-1 rounded-md">NOT APPLIED</span>
                 </div>
 
                 <p class="text-sm text-gray-600 mt-4 line-clamp-2">
