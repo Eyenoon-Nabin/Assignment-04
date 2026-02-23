@@ -110,3 +110,35 @@ tabRejected.addEventListener('click', function () {
     showCardsByStatus('rejected');
     updateTabColors(tabRejected, 'btn-error');
 });
+//tab delete 
+const totalCountElement = document.getElementById('total-count');
+const availableJobsText = document.getElementById('available-jobs-count');
+
+let totalJobsCount = 8;
+const jobsContainer = document.getElementById('jobs-container');
+jobsContainer.addEventListener('click', function (event) {
+    const deleteBtn = event.target.closest('button.absolute');
+
+    if (deleteBtn) {
+        const card = deleteBtn.closest('.job-card');
+        const currentStatus = card.getAttribute('data-status');
+        totalJobsCount--;
+        totalCountElement.innerText = totalJobsCount;
+
+        if (availableJobsText) {
+            availableJobsText.innerText = totalJobsCount + ' jobs';
+        }
+        if (currentStatus === 'interview') {
+            interviewCount--;
+            document.getElementById('interview-count').innerText = interviewCount;
+        } else if (currentStatus === 'rejected') {
+            rejectedCount--;
+            document.getElementById('rejected-count').innerText = rejectedCount;
+        }
+        card.remove();
+        const remainingCards = document.querySelectorAll('.job-card').length;
+        if (remainingCards === 0) {
+            document.getElementById('empty-state').classList.remove('hidden');
+        }
+    }
+});
