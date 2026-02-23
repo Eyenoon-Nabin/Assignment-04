@@ -27,7 +27,7 @@ for (let btn of interviewButtons) {
         card.setAttribute('data-status', 'interview');
         const badge = card.querySelector('span');
         badge.innerText = 'INTERVIEW';
-        badge.className = 'bg-green-100 text-green-600 text-xs font-semibold px-3 py-1 rounded-md'; >> //use ai here
+        badge.className = 'bg-green-100 text-green-600 text-xs font-semibold px-3 py-1 rounded-md';
     });
 }
 //3 rejecte click korle count
@@ -44,3 +44,15 @@ for (let btn of rejectedButtons) {
         badge.className = 'bg-red-100 text-red-600 text-xs font-semibold px-3 py-1 rounded-md';
     });
 }
+// Tab Change Function 
+function showCardsByStatus(status) {
+    let visibleCount = 0; // কয়টা কার্ড দেখা যাচ্ছে তার হিসাব
+
+    for (let card of allCards) {
+        if (status === 'all' || card.getAttribute('data-status') === status) {
+            card.style.display = 'block';
+            visibleCount++;
+        } else {
+            card.style.display = 'none';
+        }
+    }
