@@ -22,8 +22,6 @@ for (let btn of interviewButtons) {
         interviewCountElement.innerText = interviewCount;
 
         const card = event.target.closest('.job-card');
-
-
         card.setAttribute('data-status', 'interview');
         const badge = card.querySelector('span');
         badge.innerText = 'INTERVIEW';
@@ -88,7 +86,6 @@ function showCardsByStatus(status) {
             card.style.display = 'none';
         }
     }
-
     if (visibleCount === 0) {
         emptyState.classList.remove('hidden');
     } else {
